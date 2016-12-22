@@ -1,7 +1,7 @@
 
 ## Description
 
-poi\_info\_normalizer 입니다.
+address-standardization 입니다.
 
 poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API 형태로 제공합니다.
 
