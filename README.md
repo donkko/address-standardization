@@ -33,12 +33,12 @@ poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API �
 
 - **Success Response:**
 
-  * **Code:** 200 <br />
+  - **Code:** 200 <br />
     **Content:** `{ status_code : 200, status_msg: "success", normalized_addr : "경기도 수원시 팔달구 화서동 10-2" }`
  
 - **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
+  - **Code:** 404 NOT FOUND <br />
     **Content:** `{ error : "User doesn't exist" }`
 
 - **Sample Call:**
