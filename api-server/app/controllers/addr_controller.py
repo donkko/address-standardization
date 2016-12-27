@@ -1,12 +1,11 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 from flask import Blueprint, Response, request, json
+from app import constants
+from app.services.addr_service import AddrService
+
 
 addr_controller = Blueprint('addr_controller', __name__)
-
-from app import constants
-
-from app.services.addr_service import AddrService
 addr_service = AddrService()
 
 

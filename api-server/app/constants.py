@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 CODE_200 = 200
 MSG_200 = u"success"

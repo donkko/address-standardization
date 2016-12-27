@@ -1,12 +1,9 @@
-# coding=utf-8
-
-import sys
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
-from app import app
+# -*- coding: utf-8 -*-
 
 import socket
+from app import app
+
+
 host_ip_addr = socket.gethostbyname(socket.gethostname())
 port_no = 5300
 

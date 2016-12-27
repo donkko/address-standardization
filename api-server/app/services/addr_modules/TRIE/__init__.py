@@ -1,1 +1,1 @@
-__author__ = 'wasabi'
+# -*- coding: utf-8 -*-

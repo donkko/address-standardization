@@ -1,8 +1,8 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
-from app.services.addr_modules.addr_normalize import AddrNormalizer
-from app.services.addr_modules.addr_transform import AddrTransformer
-from app.services.addr_modules.addr_geocode import AddrGeocoder
+from addr_modules.addr_normalize import AddrNormalizer
+from addr_modules.addr_transform import AddrTransformer
+from addr_modules.addr_geocode import AddrGeocoder
 
 
 class AddrService(object):

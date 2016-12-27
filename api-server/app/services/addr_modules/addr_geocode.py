@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 import requests
 from xml.dom.minidom import parseString
@@ -7,23 +7,17 @@ from app.constants import NAVER_MAP_API_URL
 
 
 class AddrGeocoder(object):
-    '''
-    A class for dealing with geocoding & reverse geocoding.
-    '''
     __map_API_key__ = NAVER_MAP_API_KEY
     __params__ = {}
     __api_url__ = None
     __response__ = None
 
-
     def __init__(self):
         pass
-
 
     @staticmethod
     def do_geocoding(addr):
         return AddrGeocoder._do_geocoding_using_naver(addr)
-
 
     @staticmethod
     def _do_geocoding_using_naver(addr):
@@ -60,7 +54,6 @@ class AddrGeocoder(object):
             coord_list.append({"lng": point_x, "lat": point_y})
 
         return coord_list
-
 
     @staticmethod
     def do_reverse_geocoding(lat, lng):

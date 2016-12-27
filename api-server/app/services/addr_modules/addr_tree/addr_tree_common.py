@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 """
 AddrTreeBuilder 로 생성한 트리를 탐색하거나 이용하는 메소드들을 기술
 """

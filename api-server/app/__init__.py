@@ -1,15 +1,12 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 from flask import Flask, Response, json
+from app import constants
+from controllers.addr_controller import addr_controller
+
 
 app = Flask(__name__)
-
-
-from app.controllers.addr_controller import addr_controller
 app.register_blueprint(addr_controller)
-
-
-from app import constants
 
 
 @app.route("/")
