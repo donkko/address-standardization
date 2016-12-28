@@ -4,7 +4,7 @@ address-standardization 입니다.
 
 poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API 형태로 제공합니다.
 
-현재는 poi\_addr 정규화 기능만 제공합니다.
+현재는 poi\_addr 정규화 기능만 제공합니다. (TRIE 알고리즘 이용)
 
 
 ## API Reference
