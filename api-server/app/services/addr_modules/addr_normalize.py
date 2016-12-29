@@ -5,7 +5,6 @@ import codecs
 from app.services.addr_modules.addr_preprocess import do_cleansing
 from app.services.addr_modules.addr_tree.addr_tree_build import AddrTreeBuilder
 from app.services.addr_modules.addr_tree.addr_tree_common import get_depth
-from app.services.addr_modules.addr_transform import AddrTransformer
 from app.services.addr_modules.TRIE.TRIE_build import TrieTreeBuilder
 from app.services.addr_modules.TRIE.TRIE_common import get_split_points
 
@@ -100,10 +99,8 @@ class AddrNormalizer(object):
                 max_depth_by_road_tree = depth_by_road_tree
 
         if max_depth_by_road_tree > max_depth_by_jibeon_tree:
-            addrTransformer = AddrTransformer()
             return (max_depth_by_road_tree,
-                    (addrTransformer.road2jibeon(addr_candidate_by_road_tree)
-                        if addrTransformer.road2jibeon(addr_candidate_by_road_tree) else addr_str))
+                    (addr_candidate_by_road_tree if addr_candidate_by_road_tree else addr_str))
         else:
             return (max_depth_by_jibeon_tree,
                     (addr_candidate_by_jibeon_tree if addr_candidate_by_jibeon_tree else "None"))

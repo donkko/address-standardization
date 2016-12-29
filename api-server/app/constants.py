@@ -22,9 +22,6 @@ MIME_TYPE_APPLICATION_JSON = "application/json"
 
 ITEMS_PER_PAGE = 30
 
-JUSO_API_URL = 'http://www.juso.go.kr/addrlink/addrLinkApi.do'
-JUSO_API_KEY = 'U01TX0FVVEgyMDE1MDIxMTE1MzYwNA=='
-
 PROJECT_APP_DIR = os.path.abspath(os.path.dirname(__file__))
 
 ADDR_JIBEON_SET_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/addr_tree/addr_set_data/GovAddrSet_Jibeon.txt')

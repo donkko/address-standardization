@@ -40,26 +40,3 @@ def normalize_address():
 #     }
 #
 #     return Response(json.dumps(result), mimetype=constants.MIME_TYPE_APPLICATION_JSON)
-
-
-@addr_controller.route('/api/addr/transform', methods=['GET'])
-def transform_address():
-
-    addr = request.args.get('addr')
-    result_type = request.args.get('result_type')
-    if (addr is None or result_type is None) or (result_type != 'jibeon' and result_type != 'road'):
-        result = {
-            'status_code': constants.CODE_400
-            , 'status_msg': constants.MSG_400
-            , 'full_addr': ''
-        }
-    else:
-        full_addr = addr_service.transform(addr, result_type)
-
-        result = {
-            'status_code': constants.CODE_200
-            , 'status_msg': constants.MSG_200
-            , 'full_addr': full_addr
-        }
-
-    return Response(json.dumps(result), mimetype=constants.MIME_TYPE_APPLICATION_JSON)
