@@ -2,7 +2,6 @@
 
 from addr_modules.addr_normalize import AddrNormalizer
 from addr_modules.addr_transform import AddrTransformer
-from addr_modules.addr_geocode import AddrGeocoder
 
 
 class AddrService(object):
@@ -23,9 +22,3 @@ class AddrService(object):
         elif result_type == 'road':
             result = self.__transformer__.jibeon2road(addr)
         return result
-
-    def geocode(self, addr):
-        coord_list = AddrGeocoder.do_geocoding(addr)
-        if coord_list is None:
-            return []
-        return coord_list

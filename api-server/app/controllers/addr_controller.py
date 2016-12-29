@@ -63,25 +63,3 @@ def transform_address():
         }
 
     return Response(json.dumps(result), mimetype=constants.MIME_TYPE_APPLICATION_JSON)
-
-
-@addr_controller.route('/api/addr/geocode', methods=['GET'])
-def geocode_address():
-
-    addr = request.args.get('addr')
-    if addr is None:
-        result = {
-            'status_code': constants.CODE_400
-            , 'status_msg': constants.MSG_400
-            , 'coords': []
-        }
-    else:
-        coord_list = addr_service.geocode(addr)
-
-        result = {
-            'status_code': constants.CODE_200
-            , 'status_msg' : constants.MSG_200
-            , 'coords': coord_list
-        }
-
-    return Response(json.dumps(result), mimetype=constants.MIME_TYPE_APPLICATION_JSON)

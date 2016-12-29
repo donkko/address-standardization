@@ -19,9 +19,6 @@ MIME_TYPE_APPLICATION_JSON = "application/json"
 
 ITEMS_PER_PAGE = 30
 
-NAVER_MAP_API_URL = 'http://openapi.map.naver.com/api/geocode.php'
-NAVER_MAP_API_KEY = '530eb29318705163f6a9b882050f6bbc'  # naver ID: kiwiple1
-
 JUSO_API_URL = 'http://www.juso.go.kr/addrlink/addrLinkApi.do'
 JUSO_API_KEY = 'U01TX0FVVEgyMDE1MDIxMTE1MzYwNA=='
 
