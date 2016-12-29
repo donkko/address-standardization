@@ -17,7 +17,7 @@ from app.constants import TRIE_USERDIC_FILEPATH
 from app.constants import SHORT_ADDR_SET_FILEPATH
 
 
-class AddrNormalizer(object):
+class AddrStandardizer(object):
     '''
     주소정규화 클래스. addr_preprocess 와 addr_tree 를 이용하여 입력된 주소를 정규화.
     '''
@@ -211,46 +211,10 @@ class AddrNormalizer(object):
 #         ,u"대구달서구장동 832번지"
 #     ]
 #
-#     normalizer = AddrNormalizer()
+#     normalizer = AddrStandardizer()
 #     for addr in addr_list:
 #         normalizer.normalize(addr)
 
     # addr = u"부산 진구 부전동 516-40"
     # result = normalizer.normalize(addr)
     # print addr + ", " + (result if result else "None")
-
-    #
-    # import psycopg2
-    # import psycopg2.extras
-    #
-    # DB_HOST = u'211.234.111.33'
-    # DB_PORT = u'5433'
-    # DB_DATABASE = u'jarvisv1'
-    # DB_USER = u'kiwiple'
-    # DB_PASSWORD = u'herb##140'
-    #
-    # conn = psycopg2.connect(host=DB_HOST
-    #                         , port=DB_PORT
-    #                         , database=DB_DATABASE
-    #                         , user=DB_USER
-    #                         , password=DB_PASSWORD
-    #                         , cursor_factory=psycopg2.extras.DictCursor
-    #             )
-    # cursor = conn.cursor()
-    # cursor.execute("""
-    #     SELECT id, addr
-    #     FROM poi_temp
-    #     ORDER BY random()
-    #     LIMIT 5000
-    # """)
-    # result_list = cursor.fetchall()
-    #
-    # f = open("eval.txt", "w")
-    # normalizer = AddrNormalizer()
-    # for row in result_list:
-    #     id = str(row['id'])
-    #     raw_addr = row['addr'].decode('utf-8')
-    #     normalized_addr = normalizer.normalize(raw_addr)
-    #     f.write('%s|%s|%s\n' % (id, raw_addr.encode('utf-8'), (normalized_addr.encode('utf-8') if normalized_addr else 'None')))
-    # f.close()
-    # cursor.close()

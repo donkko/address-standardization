@@ -9,8 +9,8 @@ addr_controller = Blueprint('addr_controller', __name__)
 addr_service = AddrService()
 
 
-@addr_controller.route('/api/addr/normalize', methods=['GET'])
-def normalize_address():
+@addr_controller.route('/api/addr/standardize', methods=['GET'])
+def standardize_address():
 
     addr = request.args.get('addr')
     if addr is None:

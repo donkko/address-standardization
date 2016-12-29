@@ -9,11 +9,11 @@ MSG_200 = u"success"
 CODE_400 = 400
 MSG_400 = u"A required parameter was missing or a parameter was malformed."
 
-# CODE_401 = 401
-# MSG_401 = u"올바른 키를 입력해 주세요."
-#
-# CODE_404 = 404
-# MSG_404 = u"찾을 수 없는 요청입니다."
+CODE_401 = 401
+MSG_401 = u"올바른 키를 입력해 주세요."
+
+CODE_404 = 404
+MSG_404 = u"찾을 수 없는 요청입니다."
 
 CODE_500 = 500
 MSG_500 = u"서비스에 문제가 있습니다. 잠시 뒤에 시도해 주세요."
