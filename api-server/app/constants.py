@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 
+import os
+
+
 CODE_200 = 200
 MSG_200 = u"success"
 
@@ -22,11 +25,13 @@ ITEMS_PER_PAGE = 30
 JUSO_API_URL = 'http://www.juso.go.kr/addrlink/addrLinkApi.do'
 JUSO_API_KEY = 'U01TX0FVVEgyMDE1MDIxMTE1MzYwNA=='
 
-ADDR_JIBEON_SET_FILEPATH = 'app/services/addr_modules/addr_tree/addr_set_data/GovAddrSet_Jibeon.txt'
-ADDR_ROAD_SET_FILEPATH = 'app/services/addr_modules/addr_tree/addr_set_data/GovAddrSet_Road.txt'
+PROJECT_APP_DIR = os.path.abspath(os.path.dirname(__file__))
 
-TRIE_DICT_FOLDERPATH = 'app/services/addr_modules/TRIE/data/'
-TRIE_GOVDIC_FILEPATH = 'app/services/addr_modules/TRIE/data/GovDic.txt'
-TRIE_USERDIC_FILEPATH = 'app/services/addr_modules/TRIE/data/UserDic.txt'
+ADDR_JIBEON_SET_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/addr_tree/addr_set_data/GovAddrSet_Jibeon.txt')
+ADDR_ROAD_SET_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/addr_tree/addr_set_data/GovAddrSet_Road.txt')
 
-SHORT_ADDR_SET_FILEPATH = 'app/services/addr_modules/ShortAddr.json'
+TRIE_DICT_FOLDERPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/TRIE/data/')
+TRIE_GOVDIC_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/TRIE/data/GovDic.txt')
+TRIE_USERDIC_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/TRIE/data/UserDic.txt')
+
+SHORT_ADDR_SET_FILEPATH = os.path.join(PROJECT_APP_DIR, 'services/addr_modules/ShortAddr.json')
