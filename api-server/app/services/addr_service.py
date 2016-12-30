@@ -7,9 +7,9 @@ class AddrService(object):
     def __init__(self):
         self.__standardizer__ = AddrStandardizer()
 
-    def normalize(self, addr):
-        normalized_addr = self.__standardizer__.normalize(addr)
-        return normalized_addr
+    def standardize(self, addr):
+        standardized_addr = self.__standardizer__.standardize(addr)
+        return standardized_addr
 
     def analyze(self, addr):
         pass

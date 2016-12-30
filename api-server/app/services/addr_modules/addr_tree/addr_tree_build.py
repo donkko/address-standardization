@@ -34,15 +34,15 @@ class AddrTreeBuilder(object):
             for line in inputF:
                 numAddrLines += 1
                 addrLineSet.add(line.strip())
-        # print "[AddrTreeBuilder::buildAddrTree] address file <{0}> closed? <{1}>, how many addresses? <{2}>"\
-        #     .format(self.__inputAddrSetFilePath__, inputF.closed, numAddrLines)
+        print "[AddrTreeBuilder::buildAddrTree] address file <{0}> closed? <{1}>, how many addresses? <{2}>"\
+            .format(self.__inputAddrSetFilePath__, inputF.closed, numAddrLines)
         addrLineList = sorted(addrLineSet)
 
         del addrLineSet
 
         gc.collect()
 
-        # print '[AddrTreeBuilder::buildAddrTree] total # of unique addresses:<{0}>'.format(len(addrLineList))
+        print '[AddrTreeBuilder::buildAddrTree] total # of unique addresses:<{0}>'.format(len(addrLineList))
 
         stack = [self.__root__]
         curNodeID = 0
@@ -78,7 +78,7 @@ class AddrTreeBuilder(object):
             node = stack.pop()
             node.countOfDescendents = curNodeID - node.key
 
-        # print '[AddrTreeBuilder::buildAddrTree] # of total nodes:<{0}>'.format(curNodeID)
+        print '[AddrTreeBuilder::buildAddrTree] # of total nodes:<{0}>'.format(curNodeID)
 
         del addrLineList
         gc.collect()
@@ -86,5 +86,10 @@ class AddrTreeBuilder(object):
         return self.__root__
 
 
-# if __name__ == '__main__':
-#     pass
+if __name__ == '__main__':
+    from app.constants import ADDR_JIBEON_SET_FILEPATH
+    from app.constants import ADDR_ROAD_SET_FILEPATH
+    
+    builder = AddrTreeBuilder()
+    builder.buildAddrTree(ADDR_JIBEON_SET_FILEPATH)
+    #builder.buildAddrTree(ADDR_ROAD_SET_FILEPATH)

@@ -2,20 +2,22 @@
 
 address-standardization 입니다.
 
-poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API 형태로 제공합니다.
+다양한 형태의 대한민국 주소를 문자열로 받아서 정형화된 주소 형식으로 변환하는 기능을 Web RESTful API 형태로 제공합니다.
 
-현재는 poi\_addr 정규화 기능만 제공합니다. (TRIE 알고리즘 이용)
+
+## 알고리즘
+preprocessing 후 TRIE 알고리즘 이용
 
 
 ## API Reference
 
-**addr normalize**
+**addr standardize**
 
 주소정규화
 
 - **URL**
 
-  /addr/normalize
+  /addr/standardize
 
 - **Method:**
 
@@ -34,7 +36,7 @@ poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API �
 - **Success Response:**
 
   - **Code:** 200 <br />
-    **Content:** `{ status_code : 200, status_msg: "success", normalized_addr : "경기도 수원시 팔달구 화서동 10-2" }`
+    **Content:** `{ status_code : 200, status_msg: "success", standardized_addr : "경기도 수원시 팔달구 화서동 10-2" }`
  
 - **Error Response:**
 
@@ -45,7 +47,7 @@ poi\_addr, poi\_name, poi\_phone 등을 정규화하는 기능을 REST Web API �
 
   ```javascript
     $.ajax({
-      url: "/addr/normalize?addr=경기 수원 팔달구화서동 10-2 화서빌딩 2층",
+      url: "/standardize",
       dataType: "json",
       type : "GET",
       success : function(r) {

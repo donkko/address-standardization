@@ -17,14 +17,14 @@ def standardize_address():
         result = {
             'status_code': constants.CODE_400
             , 'status_msg': constants.MSG_400
-            , 'normalized_addr': ''
+            , 'standardized_addr': ''
         }
     else:
-        normalized_addr = addr_service.normalize(addr)
+        standardized_addr = addr_service.standardize(addr)
         result = {
             'status_code': constants.CODE_200
             , 'status_msg': constants.MSG_200
-            , 'normalized_addr': normalized_addr
+            , 'standardized_addr': standardized_addr
         }
 
     return Response(json.dumps(result), mimetype=constants.MIME_TYPE_APPLICATION_JSON)

@@ -34,11 +34,11 @@ def internal_server_error(e):
     return Response(json.dumps(result),  mimetype=constants.MIME_TYPE_APPLICATION_JSON)
 
 
-# @app.errorhandler(Exception)
-# def unhandled_exception(e):
-#     result = {
-#         'status_code': constants.CODE_500
-#         , 'status_msg': constants.MSG_500
-#     }
-#
-#     return Response(json.dumps(result),  mimetype=constants.MIME_TYPE_APPLICATION_JSON)
+@app.errorhandler(Exception)
+def unhandled_exception(e):
+    result = {
+        'status_code': constants.CODE_500
+        , 'status_msg': constants.MSG_500
+    }
+
+    return Response(json.dumps(result),  mimetype=constants.MIME_TYPE_APPLICATION_JSON)

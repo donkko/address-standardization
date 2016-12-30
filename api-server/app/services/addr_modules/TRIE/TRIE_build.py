@@ -36,15 +36,15 @@ class TrieTreeBuilder(object):
                 for line in inputF:
                     numTrieLines += 1
                     trieLineSet.add(line.strip())
-        # print "[TrieTreeBuilder::buildTrieTree] how many items in trie dicts(GovDic.txt, UserDic.txt)? <{0}>"\
-        #     .format(numTrieLines)
+        print "[TrieTreeBuilder::buildTrieTree] how many items in trie dicts(GovDic.txt, UserDic.txt)? <{0}>"\
+            .format(numTrieLines)
         trieLineList = sorted(trieLineSet)
 
         del trieLineSet
 
         gc.collect()
 
-        # print '[TrieTreeBuilder::buildTrieTree] total # of unique trie items in dict:<{0}>'.format(len(trieLineList))
+        print '[TrieTreeBuilder::buildTrieTree] total # of unique trie items in dict:<{0}>'.format(len(trieLineList))
 
         stack = [self.__root__]
         curNodeID = 0
@@ -82,13 +82,13 @@ class TrieTreeBuilder(object):
             node = stack.pop()
             node.countOfDescendents = curNodeID - node.key
 
-        # print '[TrieTreeBuilder::buildTrieTree] # of total nodes:<{0}>'.format(curNodeID)
+        print '[TrieTreeBuilder::buildTrieTree] # of total nodes:<{0}>'.format(curNodeID)
 
         del trieLineList
         gc.collect()
 
         return self.__root__
 
-# if __name__ == '__main__':
-#     trieTreeBuilder = TrieTreeBuilder()
-#     trieTreeBuilder.buildTrieTree('data')
+if __name__ == '__main__':
+    trieTreeBuilder = TrieTreeBuilder()
+    trieTreeBuilder.buildTrieTree('data')
